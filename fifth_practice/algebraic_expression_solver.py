@@ -101,16 +101,26 @@ def calc(a, b, operation):
 def solve_expression(expression):
     rpn = conversion(expression)
     stack = []
+    if not rpn:
+        return "", "Нет операндов"
     i = 0
     for item in rpn:
         if is_number(item) or item in nonnumbers:
             stack.append(float(item))
         elif item in operations:
-            b = stack.pop()
-            a = stack.pop()
-            stack.append(calc(a, b, item))
-    result = stack.pop()
-    return int(result) if result % 1 == 0 else round(result, 2)
+            try:
+                b = stack.pop()
+                a = stack.pop()
+            except Exception:
+                return "", "Вы ввели что-то не так"
+            else:
+                stack.append(calc(a, b, item))
+    try:
+        result = stack.pop()
+    except Exception:
+        return "", "Вы ввели что-то не так"
+    else:
+        return int(result) if result % 1 == 0 else round(result, 2), "OK"
 
 
 def normalize(expression):
@@ -166,7 +176,12 @@ while 1:
         break
     expression, error = normalize(str(result) + expression)
     if not expression:
-        print("Вы ввели недопустимые символы, повторите попытку")
+        print(error)
+        print("Повторите ввод")
         continue
-    result = solve_expression(expression)
+    result, solveerror = solve_expression(expression)
+    if not result:
+        print(solveerror)
+        print("Повторите ввод")
+        continue
     print_result(expression, result)
