@@ -2,6 +2,7 @@ from functools import reduce
 
 
 def factorial(n):
+    """Return factorial of n with nonrecursive algorithm and lambda"""
     if n == 0:
         return 1
     else:

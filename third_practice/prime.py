@@ -2,6 +2,7 @@ import math
 
 
 def is_prime(n):
+    """Returns True if n is prime or False if n isn't prime"""
     if n % 2 == 0:
         return False
     for i in range(2, int(math.sqrt(n) + 1)):
@@ -11,13 +12,34 @@ def is_prime(n):
 
 
 def gcd(a, b):
+    """
+    Returns greatect common divisor of two numbers
+
+    Keyword arguments:
+    a - first number
+    b - second number
+
+    Returns:
+    a (int) - greatest common divisor of a and b
+    """
     while (b):
         (a, b) = (b, a % b)
     return a
 
 
 def lcm(a, b):
-    return int(abs(a * b) / gcd(a, b))
+    """
+    Returns lowest common multiple of two numbers
+
+    Keyword arguments:
+    a - first number
+    b - second number
+
+    Returns:
+    lcm (int) - lowest common multiple of a and b
+    """
+    lcm = int(abs(a * b) / gcd(a, b))
+    return lcm
 
 
 while (1):

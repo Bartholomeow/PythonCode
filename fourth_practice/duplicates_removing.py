@@ -1,4 +1,5 @@
 def remove_duplicates(list):
+    """Return list without duplicates in original order"""
     unique = set()
     i = 0
     while(i < len(list)):

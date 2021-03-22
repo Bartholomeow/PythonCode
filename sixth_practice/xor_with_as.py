@@ -1,4 +1,12 @@
 def xor_encryption(source, destination, key):
+    """
+    Returns text encrypted or decrypted with xor
+
+    Keyword arguments:
+    source - path to file with text to be encrypted
+    destination - path to the file where you want to save the result
+    key - encryption key
+    """
     with open(source, 'rb') as f:
         text = f.read()
     key = bytearray(key, 'utf-8')

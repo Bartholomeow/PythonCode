@@ -1,5 +1,5 @@
 def brackets_are_correct(text):
-
+    """Determine if brackets in text are correct"""
     brackets = []
     for i in range(len(text)):
         if text[i] in ['(', '{', '[']:

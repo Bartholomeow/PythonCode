@@ -1,4 +1,5 @@
 def number_frequency(a, b):
+    """Count frequency of digits in numbers in range(a, b + 1)"""
     freq_dict = {}
     for i in range(a, b + 1):
         num = i

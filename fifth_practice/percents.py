@@ -1,5 +1,17 @@
 def savings(deposit, percent, time):
-    return deposit * (1 + percent / 100) ** time
+    """
+    Return the amount of savings from a certain deposit, percentage after a certain amount of time
+
+    Keyword arguments:
+    deposit - deposit by number
+    percent - percent by number 
+    time - time in months
+
+    Returns:
+    result (int) - savings
+    """
+    result = deposit * (1 + percent / 100) ** time
+    return result
 
 
 while 1:

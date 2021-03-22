@@ -1,4 +1,10 @@
 def conversion(expression):
+    """
+    Convert expression in infix notation to postfix notation
+
+    Returns:
+    result (string) - expression in postfix notation
+    """
     stack = []
     result = ''
     priority = {
@@ -39,6 +45,7 @@ def conversion(expression):
 
 
 def solve_expression(expression):
+    """Solve expression in postfix notation"""
     rpn = conversion(expression)
     stack = []
     i = 0
@@ -69,10 +76,6 @@ def solve_expression(expression):
     print(f"{expression} = {stack.pop()}")
 
 
-# a = '35 + 14 * 2 / (1 - 5)^2'
-# b = '(15 + 22) * 4 + 31'
-# solve_expression(a)
-# solve_expression(b)
 print('''Введите математический пример, состоящий из знаков возведения в степень(^),
 умножения(*), деления(/), сложения(+), вычитания(-) и круглых скобок. (пока не успел реализовать большее,
 проверка на правильность введённого примера тоже пока не реализована)''')

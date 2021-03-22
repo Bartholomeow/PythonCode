@@ -5,6 +5,17 @@
 
 
 def tree_search(tree, node1, node2):
+    """
+    Determine path from node to node in tree, if it exists
+
+    Keyword arguments:
+    tree - tree given by adjacency list
+    node1 - source node
+    node2 - destination node
+
+    Prints:
+    path from node1 to node2, or 'Пути нет' if path doesn't exist
+    """
     mark = set()
     root = node1
     path = {}
@@ -38,5 +49,6 @@ tree = {
     8: [9],
     9: [8]
 }
+
 
 tree_search(tree, 8, 9)

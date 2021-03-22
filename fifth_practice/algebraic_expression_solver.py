@@ -1,5 +1,6 @@
 import re
 import math
+
 operations = ["*", "/", "+", "-", "^"]
 
 priority = {
@@ -21,11 +22,18 @@ nonnumbers = ["inf", "nan"]
 
 
 def is_number(input):
+    """Determine if input is number"""
     result = re.fullmatch("\d+([.]?\d+)?", input)
     return True if result else False
 
 
 def conversion(expression):
+    """
+    Convert expression in infix notation to postfix notation
+
+    Returns:
+    result (string) - expression in postfix notation
+    """
     stack = []
     result = []
     splitexpr = expression.split()
@@ -54,6 +62,7 @@ def conversion(expression):
 
 
 def brackets_are_correct(expression):
+    """Determine if brackets in expression are correct"""
     stack = []
     for symbol in expression:
         if symbol in brackets.values():
@@ -69,16 +78,22 @@ def brackets_are_correct(expression):
 
 
 def calc(a, b, operation):
+    """Calculate expression with operands a,b and operation"""
+
     def add(a1, b1):
+        """Return result of addition of a1 and b1"""
         return a1 + b1
 
     def remove(a1, b1):
+        """Return result of subtraction of a1 and b1"""
         return a1 - b1
 
     def multiply(a1, b1):
+        """Return result of multiplication of a1 and b1"""
         return a1 * b1
 
     def divide(a1, b1):
+        """Return result of division of a1 and b1"""
         try:
             result = a1 / b1
         except ZeroDivisionError:
@@ -87,7 +102,9 @@ def calc(a, b, operation):
             return result
 
     def pow(a1, b1):
+        """Return result of exponentiation of a1 to power b1"""
         return a1 ** b1
+
     selector = {
         "+": add,
         "-": remove,
@@ -99,6 +116,13 @@ def calc(a, b, operation):
 
 
 def solve_expression(expression):
+    """
+    Solve expression in postfix notation
+
+    Returns:
+    result (int) if expression is correct or empty string if isn't correct; 
+    error (string) - description of error or "OK" if everything is fine
+    """
     rpn = conversion(expression)
     stack = []
     if not rpn:
@@ -124,6 +148,13 @@ def solve_expression(expression):
 
 
 def normalize(expression):
+    """
+    Сonverting an expression to a form with spaces between operands and operations
+
+    Returns:
+    result (string) if expression is correct or empty string if isn't correct; 
+    error (string) - description of error or "OK" if everything is fine
+    """
     result = ""
     i = 0
     if not brackets_are_correct(expression):
@@ -162,6 +193,7 @@ def normalize(expression):
 
 
 def print_result(expression, result):
+    """Return expression in normal view"""
     print(f"{expression} = {result}", end="")
 
 

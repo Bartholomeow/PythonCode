@@ -1,4 +1,5 @@
 def letter_frequency(text):
+    """Count frequency of letters in text"""
     freq_dict = {}
     for i in range(0, len(text)):
         freq_dict[text[i]] = freq_dict.setdefault(text[i], 0) + 1

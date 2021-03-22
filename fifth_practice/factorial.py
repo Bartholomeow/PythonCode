@@ -1,12 +1,14 @@
 def factorial(n):
+    """Return factorial of n with nonrecursive algorithm"""
     result = 1
     for i in range(1, n + 1):
         result *= i
     return result
 
 
-def factorial_lambda_rec(n): return 1 if n == 0 else n * \
-    factorial_lambda_rec(n - 1)
+def factorial_lambda_rec(n):
+    """Return factorial of n with recursive algorithm and lambda"""
+    return 1 if n == 0 else n * factorial_lambda_rec(n - 1)
 
 
 while True:

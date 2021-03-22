@@ -1,8 +1,14 @@
 import math
-# a * x^2 + b * x + c = 0
 
 
 def solve_equation(a, b, c):
+    """Solve quadratic equation with complex roots
+
+    Keyword arguments:
+    a - coefficient at x^2
+    b - coefficient at x
+    c - free coefficient
+    """
     print(f"{a} * x^2 + {b} * x + {c} = 0")
     if (a == 0):
         if (b == 0):
