@@ -1,0 +1,6 @@
+Start time = 2021-03-25 16:31:07.043788; finish time = 2021-03-25 16:31:07.332785; function = is_prime; arguments = ((999999000001,), {})
+Start time = 2021-03-25 16:31:07.351581; finish time = 2021-03-25 16:31:07.420271; function = is_prime; arguments = ((87178291199,), {})
+Start time = 2021-03-25 16:31:07.421255; finish time = 2021-03-25 16:31:07.421255; function = is_prime; arguments = ((1013,), {})
+Start time = 2021-03-25 16:31:07.422255; finish time = 2021-03-25 16:31:07.427253; function = is_prime; arguments = ((655360001,), {})
+Start time = 2021-03-25 16:31:07.428144; finish time = 2021-03-25 16:31:08.026238; function = is_prime; arguments = ((4398042316799,), {})
+Start time = 2021-03-25 16:31:08.029238; finish time = 2021-03-25 16:31:16.207628; function = is_prime; arguments = ((1125899839733759,), {})
